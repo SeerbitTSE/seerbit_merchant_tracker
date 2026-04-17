@@ -1,150 +1,138 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:var(--font-sans);}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
-.app{background:#f0f4f2;min-height:100vh;padding:0 0 2rem;}
-.navbar{background:#fff;border-bottom:0.5px solid #e0e8e4;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.logo{display:flex;align-items:center;gap:10px;}
-.logo-icon{width:32px;height:32px;background:#1D9E75;border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.logo-title{font-size:15px;font-weight:500;color:#1a2e25;}
-.logo-sub{font-size:11px;color:#6b8a7a;margin-top:1px;}
-.nav-actions{display:flex;align-items:center;gap:10px;}
-.btn{font-size:13px;padding:7px 16px;border-radius:8px;border:0.5px solid #c5d8ce;background:transparent;color:#1a2e25;cursor:pointer;font-family:var(--font-sans);}
-.btn:hover{background:#e8f5ef;}
-.btn-green{background:#1D9E75;border-color:#1D9E75;color:#fff;}
-.btn-green:hover{background:#0F6E56;}
-.btn-dark{background:#1a2e25;border-color:#1a2e25;color:#fff;}
-.btn-dark:hover{background:#0d1a14;}
-.btn-sm{font-size:12px;padding:5px 12px;}
-.btn-outline-green{border-color:#1D9E75;color:#1D9E75;}
-.btn-outline-green:hover{background:#e1f5ee;}
-.main{padding:1.5rem;}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:1.25rem;}
-.metric-card{background:#fff;border-radius:12px;padding:1.25rem;border:0.5px solid #e0e8e4;}
-.metric-val{font-size:28px;font-weight:500;color:#1a2e25;}
-.metric-label{font-size:12px;color:#6b8a7a;margin-top:4px;}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem;}
-.card{background:#fff;border-radius:12px;border:0.5px solid #e0e8e4;padding:1.25rem;}
-.card-title{font-size:13px;font-weight:500;color:#1a2e25;margin-bottom:1rem;}
-.merchant-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:0.5px solid #f0f4f2;cursor:pointer;}
-.merchant-item:last-child{border-bottom:none;}
-.merchant-item:hover .m-name{color:#1D9E75;}
-.avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0;}
-.m-info{flex:1;min-width:0;}
-.m-name{font-size:13px;font-weight:500;color:#1a2e25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.m-sub{font-size:11px;color:#6b8a7a;margin-top:2px;}
-.m-pct{font-size:13px;font-weight:500;color:#1D9E75;min-width:36px;text-align:right;}
+.app{background:#f0f4f2;min-height:600px;padding-bottom:2rem;}
+.navbar{background:#1a2e25;border-bottom:0.5px solid #0d1a14;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:58px;}
+.logo-icon{width:30px;height:30px;background:#1D9E75;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-title{font-size:14px;font-weight:500;color:#fff;margin-left:9px;}
+.logo-sub{font-size:11px;color:#9FE1CB;display:block;margin-left:9px;}
+.nav-r{display:flex;gap:8px;align-items:center;}
+.btn{font-size:12px;padding:6px 13px;border-radius:7px;border:0.5px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;font-family:var(--font-sans);white-space:nowrap;}
+.btn:hover{background:rgba(255,255,255,0.2);}
+.btn-g{background:#1D9E75;border-color:#1D9E75;color:#fff;}
+.btn-g:hover{background:#0F6E56;border-color:#0F6E56;}
+.btn-sm{padding:5px 11px;font-size:12px;}
+.main{padding:1.25rem;}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:1.1rem;}
+.mc{background:#fff;border-radius:10px;padding:1rem 1.1rem;border:0.5px solid #d4e4dc;}
+.mv{font-size:26px;font-weight:500;color:#0d1f17;}
+.ml{font-size:11px;color:#5a7a6a;margin-top:3px;}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-bottom:1.1rem;}
+.card{background:#fff;border-radius:10px;border:0.5px solid #d4e4dc;padding:1.1rem;}
+.ct{font-size:13px;font-weight:500;color:#0d1f17;margin-bottom:.9rem;}
+.invite-banner{background:#1D9E75;border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;gap:12px;}
+.ib-title{font-size:13px;font-weight:500;color:#fff;}
+.ib-sub{font-size:11px;color:#9FE1CB;margin-top:2px;}
+.btn-w{background:#fff;color:#1D9E75;border:none;border-radius:7px;font-size:12px;padding:6px 13px;cursor:pointer;font-family:var(--font-sans);font-weight:500;white-space:nowrap;}
+.btn-w:hover{background:#e1f5ee;}
+.search-box{width:100%;padding:7px 10px 7px 28px;border:0.5px solid #d4e4dc;border-radius:7px;font-size:12px;color:#0d1f17;background:#f8fbf9;font-family:var(--font-sans);margin-bottom:10px;}
+.search-box:focus{outline:none;border-color:#1D9E75;background:#fff;}
+.s-wrap{position:relative;}
+.s-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);font-size:13px;color:#5a7a6a;}
+.tabs{display:flex;gap:0;border-bottom:0.5px solid #d4e4dc;margin-bottom:10px;}
+.tab{font-size:12px;padding:6px 12px;cursor:pointer;color:#5a7a6a;border-bottom:2px solid transparent;margin-bottom:-0.5px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--font-sans);}
+.tab.act{color:#1D9E75;border-bottom-color:#1D9E75;font-weight:500;}
+.m-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:0.5px solid #f0f4f2;cursor:pointer;}
+.m-item:last-child{border-bottom:none;}
+.m-item:hover .mn{color:#1D9E75;}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
+.mn{font-size:13px;font-weight:500;color:#0d1f17;}
+.ms{font-size:11px;color:#5a7a6a;margin-top:1px;}
 .pbar{height:3px;background:#e8f5ef;border-radius:99px;overflow:hidden;margin-top:4px;}
-.pbar-fill{height:100%;background:#1D9E75;border-radius:99px;}
-.status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.dot-green{background:#1D9E75;}
-.dot-amber{background:#EF9F27;}
-.dot-gray{background:#B4B2A9;}
-.footer-card{background:#fff;border-radius:12px;border:0.5px solid #e0e8e4;padding:1.25rem;display:flex;align-items:center;justify-content:space-between;}
-.footer-label{font-size:13px;font-weight:500;color:#1a2e25;margin-bottom:4px;}
-.footer-sub{font-size:12px;color:#6b8a7a;}
-.export-btns{display:flex;gap:8px;flex-wrap:wrap;}
-.signup-card{background:#1D9E75;border-radius:12px;padding:1.25rem;color:#fff;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
-.signup-title{font-size:14px;font-weight:500;color:#fff;margin-bottom:3px;}
-.signup-sub{font-size:12px;color:#9FE1CB;}
-.btn-white{background:#fff;color:#1D9E75;border-color:#fff;font-size:12px;padding:6px 14px;border-radius:8px;border:none;cursor:pointer;font-family:var(--font-sans);font-weight:500;white-space:nowrap;}
-.btn-white:hover{background:#e1f5ee;}
-.modal-bg{display:none;background:rgba(0,0,0,0.4);border-radius:12px;padding:2rem;align-items:flex-start;justify-content:center;min-height:320px;margin-bottom:1rem;}
-.modal-bg.open{display:flex;}
-.modal{background:#fff;border:0.5px solid #e0e8e4;border-radius:12px;padding:1.5rem;width:100%;max-width:380px;margin-top:1rem;}
-.modal-title{font-size:15px;font-weight:500;color:#1a2e25;margin-bottom:4px;}
-.modal-sub{font-size:12px;color:#6b8a7a;margin-bottom:1.25rem;}
-.field{margin-bottom:12px;}
-.field label{display:block;font-size:12px;color:#6b8a7a;margin-bottom:4px;}
-.field input,.field select{width:100%;font-size:13px;padding:8px 10px;border:0.5px solid #c5d8ce;border-radius:8px;background:#fff;color:#1a2e25;font-family:var(--font-sans);}
-.field input:focus,.field select:focus{outline:none;border-color:#1D9E75;}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem;}
-.tabs{display:flex;gap:4px;border-bottom:0.5px solid #e0e8e4;margin-bottom:1rem;}
-.tab{font-size:13px;padding:6px 12px;cursor:pointer;color:#6b8a7a;border-bottom:2px solid transparent;margin-bottom:-0.5px;}
-.tab.active{color:#1D9E75;border-bottom-color:#1D9E75;font-weight:500;}
-.search-wrap{position:relative;margin-bottom:12px;}
-.search-wrap input{width:100%;padding:8px 10px 8px 32px;border:0.5px solid #e0e8e4;border-radius:8px;font-size:13px;color:#1a2e25;background:#f8fbf9;font-family:var(--font-sans);}
-.search-wrap input:focus{outline:none;border-color:#1D9E75;background:#fff;}
-.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#6b8a7a;font-size:14px;}
-.empty{text-align:center;padding:2rem 1rem;color:#6b8a7a;font-size:13px;}
-.detail-back{display:flex;align-items:center;gap:6px;font-size:13px;color:#6b8a7a;cursor:pointer;background:none;border:none;font-family:var(--font-sans);padding:0;margin-bottom:1rem;}
-.detail-back:hover{color:#1D9E75;}
-.sec-hdr{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#f0f4f2;border-radius:8px;margin-bottom:5px;cursor:pointer;border:0.5px solid #e0e8e4;}
-.sec-title{font-size:12px;font-weight:500;color:#1a2e25;flex:1;}
-.sec-badge{font-size:11px;padding:2px 7px;border-radius:99px;background:#1D9E75;color:#fff;font-weight:500;}
-.chev{font-size:10px;color:#6b8a7a;transition:transform .2s;}
-.chev.open{transform:rotate(90deg);}
-.items-wrap{display:none;}
-.items-wrap.open{display:block;}
-.item-row{display:flex;align-items:flex-start;gap:9px;padding:7px 12px;border-radius:8px;cursor:pointer;margin-bottom:2px;}
-.item-row:hover{background:#f0f4f2;}
-.item-row.done{opacity:.5;}
-.cbox{width:16px;height:16px;border-radius:4px;border:1.5px solid #c5d8ce;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
-.item-row.done .cbox{background:#1D9E75;border-color:#1D9E75;}
-.ck-svg{display:none;}
-.item-row.done .ck-svg{display:block;}
-.item-t{font-size:12px;color:#1a2e25;line-height:1.5;}
-.item-n{font-size:11px;color:#6b8a7a;margin-top:2px;}
-.item-row.done .item-t{text-decoration:line-through;color:#6b8a7a;}
-.notes-ta{width:100%;min-height:56px;font-size:12px;font-family:var(--font-sans);padding:8px;border:0.5px solid #c5d8ce;border-radius:8px;background:#fff;color:#1a2e25;resize:vertical;}
-.view-page{background:#f0f4f2;min-height:400px;padding:1.5rem;}
-.view-card{background:#fff;border-radius:12px;border:0.5px solid #e0e8e4;padding:1.5rem;max-width:420px;margin:0 auto;}
+.pf{height:100%;background:#1D9E75;border-radius:99px;}
+.spill{font-size:10px;padding:2px 7px;border-radius:99px;font-weight:500;flex-shrink:0;}
+.sp-new{background:#f0f4f2;color:#5a7a6a;}
+.sp-prog{background:#FAEEDA;color:#633806;}
+.sp-done{background:#E1F5EE;color:#085041;}
+.empty{text-align:center;padding:2rem 1rem;color:#5a7a6a;font-size:12px;}
+.footer-row{background:#fff;border-radius:10px;border:0.5px solid #d4e4dc;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.exp-btns{display:flex;gap:8px;flex-wrap:wrap;}
 .pg{display:none;}
-.pg.active{display:block;}
+.pg.act{display:block;}
+.sec-hdr{display:flex;align-items:center;gap:8px;padding:8px 11px;background:#f0f4f2;border-radius:8px;margin-bottom:4px;cursor:pointer;border:0.5px solid #d4e4dc;}
+.sec-hdr:hover{background:#e8f5ef;}
+.stitle{font-size:12px;font-weight:500;color:#0d1f17;flex:1;}
+.sbadge{font-size:10px;padding:2px 7px;border-radius:99px;background:#1D9E75;color:#fff;font-weight:500;}
+.chev{font-size:9px;color:#5a7a6a;transition:transform .2s;}
+.chev.op{transform:rotate(90deg);}
+.iw{display:none;}
+.iw.op{display:block;}
+.irow{display:flex;align-items:flex-start;gap:9px;padding:6px 11px;border-radius:7px;cursor:pointer;margin-bottom:2px;}
+.irow:hover{background:#f0f4f2;}
+.irow.ck{opacity:.5;}
+.cbox{width:15px;height:15px;border-radius:4px;border:1.5px solid #b8d4c4;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
+.irow.ck .cbox{background:#1D9E75;border-color:#1D9E75;}
+.cksvg{display:none;}
+.irow.ck .cksvg{display:block;}
+.itxt{font-size:12px;color:#0d1f17;line-height:1.5;}
+.inote{font-size:11px;color:#5a7a6a;margin-top:1px;}
+.irow.ck .itxt{text-decoration:line-through;color:#5a7a6a;}
+.nta{width:100%;min-height:52px;font-size:12px;font-family:var(--font-sans);padding:7px 9px;border:0.5px solid #b8d4c4;border-radius:7px;background:#fff;color:#0d1f17;resize:vertical;}
+.modal-wrap{background:rgba(0,0,0,0.45);border-radius:10px;padding:1.5rem;display:none;align-items:flex-start;justify-content:center;min-height:300px;margin-bottom:1rem;}
+.modal-wrap.op{display:flex;}
+.modal{background:#fff;border:0.5px solid #d4e4dc;border-radius:10px;padding:1.25rem;width:100%;max-width:360px;}
+.modal-title{font-size:14px;font-weight:500;color:#0d1f17;margin-bottom:3px;}
+.modal-sub{font-size:11px;color:#5a7a6a;margin-bottom:1rem;}
+.field{margin-bottom:10px;}
+.field label{display:block;font-size:11px;color:#5a7a6a;margin-bottom:3px;}
+.field input,.field select{width:100%;font-size:12px;padding:7px 9px;border:0.5px solid #b8d4c4;border-radius:7px;background:#fff;color:#0d1f17;font-family:var(--font-sans);}
+.field input:focus,.field select:focus{outline:none;border-color:#1D9E75;}
+.mactions{display:flex;gap:7px;justify-content:flex-end;margin-top:.9rem;}
+.viewer-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:0.5px solid #f0f4f2;}
+.viewer-row:last-child{border-bottom:none;}
+.btn-danger{color:#A32D2D;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);}
+.btn-danger:hover{background:#FCEBEB;color:#A32D2D;border-color:#F09595;}
 </style>
 
-<h2 class="sr-only">Seerbit merchant integration tracker — dashboard with progress, charts, and merchant management</h2>
+<h2 class="sr-only">Seerbit merchant integration tracker — manage multiple merchant onboarding with checklists, progress tracking, viewer signups, and export</h2>
 
-<div id="pg-dashboard" class="pg active">
+<div id="pg-dash" class="pg act">
 <div class="app">
   <div class="navbar">
-    <div class="logo">
-      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M9 3v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div><div class="logo-title">Seerbit merchant tracker</div><div class="logo-sub">Onboarding · Progress · Collaboration</div></div>
+    <div style="display:flex;align-items:center;">
+      <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div>
+        <span class="logo-title">Seerbit merchant tracker</span>
+        <span class="logo-sub">Onboarding · Progress · Collaboration</span>
+      </div>
     </div>
-    <div class="nav-actions">
-      <button class="btn btn-outline-green btn-sm" onclick="openSignup()">Sign up / invite team</button>
-      <button class="btn btn-green btn-sm" onclick="openAdd()">+ Add merchant</button>
+    <div class="nav-r">
+      <button class="btn btn-sm" onclick="showPg('pg-signup')">Invite team</button>
+      <button class="btn btn-g btn-sm" onclick="openAdd()">+ Add merchant</button>
     </div>
   </div>
-
   <div class="main">
     <div class="metrics" id="metrics"></div>
-
-    <div class="signup-card">
-      <div><div class="signup-title">Invite your team to view merchant progress</div><div class="signup-sub">Share read-only access — teammates can track integrations without editing</div></div>
-      <button class="btn-white" onclick="openSignup()">Invite / sign up</button>
+    <div class="invite-banner">
+      <div><div class="ib-title">Invite teammates to view merchant progress</div><div class="ib-sub">Share read-only access — colleagues can track integrations without editing</div></div>
+      <button class="btn-w" onclick="showPg('pg-signup')">Sign up / invite</button>
     </div>
-
     <div class="grid2">
-      <div class="card">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-          <div class="card-title" style="margin-bottom:0;">Merchants</div>
-          <div class="search-wrap" style="margin-bottom:0;width:160px;">
-            <span class="search-icon">&#9906;</span>
-            <input type="text" placeholder="Search..." id="search" oninput="renderMerchants()">
-          </div>
+      <div class="card" style="min-height:300px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+          <div class="ct" style="margin-bottom:0;">Merchants</div>
         </div>
+        <div class="s-wrap"><span class="s-ico">&#9906;</span><input class="search-box" type="text" id="srch" placeholder="Search by name or email..." oninput="renderList()"></div>
         <div class="tabs">
-          <span class="tab active" data-f="all" onclick="setFilter('all',this)">All</span>
-          <span class="tab" data-f="progress" onclick="setFilter('progress',this)">In progress</span>
-          <span class="tab" data-f="done" onclick="setFilter('done',this)">Complete</span>
+          <button class="tab act" data-f="all" onclick="setF('all',this)">All</button>
+          <button class="tab" data-f="progress" onclick="setF('progress',this)">In progress</button>
+          <button class="tab" data-f="done" onclick="setF('done',this)">Complete</button>
+          <button class="tab" data-f="new" onclick="setF('new',this)">Not started</button>
         </div>
-        <div id="merchant-list" style="max-height:280px;overflow-y:auto;"></div>
+        <div id="mlist" style="max-height:260px;overflow-y:auto;"></div>
       </div>
       <div class="card">
-        <div class="card-title">Weekly check-ins</div>
-        <div style="position:relative;height:220px;"><canvas id="weekChart" role="img" aria-label="Bar chart of weekly merchant check-in activity Mon through Fri"></canvas></div>
+        <div class="ct">Weekly activity</div>
+        <div style="position:relative;height:220px;"><canvas id="wchart" role="img" aria-label="Bar chart of weekly merchant check-in activity"></canvas></div>
       </div>
     </div>
-
-    <div class="footer-card">
-      <div><div class="footer-label">Export & reports</div><div class="footer-sub">Download merchant data or share progress</div></div>
-      <div class="export-btns">
-        <button class="btn btn-sm btn-green" onclick="exportCSV()">Export CSV</button>
-        <button class="btn btn-sm btn-outline-green" onclick="exportJSON()">Export JSON</button>
-        <button class="btn btn-sm" onclick="copyShareLink()">Copy share link</button>
+    <div class="footer-row">
+      <div><div style="font-size:13px;font-weight:500;color:#0d1f17;">Export & reports</div><div style="font-size:11px;color:#5a7a6a;margin-top:2px;">Download merchant integration data</div></div>
+      <div class="exp-btns">
+        <button class="btn btn-g btn-sm" onclick="expCSV()">Export CSV</button>
+        <button class="btn btn-sm" style="border-color:#1D9E75;color:#1D9E75;background:#fff;" onclick="expJSON()">Export JSON</button>
+        <button class="btn btn-sm" style="background:#fff;color:#0d1f17;border-color:#d4e4dc;" onclick="copyLink()">Copy share link</button>
       </div>
     </div>
   </div>
@@ -154,31 +142,31 @@ body{font-family:var(--font-sans);}
 <div id="pg-detail" class="pg">
 <div class="app">
   <div class="navbar">
-    <div class="logo">
-      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M9 3v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div><div class="logo-title">Seerbit merchant tracker</div></div>
+    <div style="display:flex;align-items:center;">
+      <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <span class="logo-title">Seerbit merchant tracker</span>
     </div>
-    <div class="nav-actions">
-      <button class="btn btn-sm" onclick="showDash()">&#8592; Dashboard</button>
-      <button class="btn btn-sm btn-outline-green" id="edit-btn" onclick="openEdit()">Edit</button>
-      <button class="btn btn-sm" style="color:#A32D2D;border-color:#F09595;" onclick="deleteMerchant()">Delete</button>
+    <div class="nav-r">
+      <button class="btn btn-sm" onclick="showPg('pg-dash');renderAll()">&#8592; Dashboard</button>
+      <button class="btn btn-sm" onclick="openEdit()">Edit</button>
+      <button class="btn btn-sm btn-danger" onclick="delMerchant()">Delete</button>
     </div>
   </div>
   <div class="main">
-    <div style="background:#fff;border-radius:12px;border:0.5px solid #e0e8e4;padding:1.25rem;margin-bottom:1rem;">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem;">
-        <div class="avatar" id="d-avatar" style="width:48px;height:48px;font-size:16px;"></div>
+    <div class="card" style="margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
+        <div class="av" id="dav" style="width:44px;height:44px;font-size:15px;"></div>
         <div style="flex:1;">
-          <div style="font-size:16px;font-weight:500;color:#1a2e25;" id="d-name"></div>
-          <div style="font-size:12px;color:#6b8a7a;margin-top:3px;" id="d-meta"></div>
-          <div style="height:5px;background:#e8f5ef;border-radius:99px;overflow:hidden;margin-top:8px;"><div id="d-bar" style="height:100%;background:#1D9E75;border-radius:99px;"></div></div>
-          <div style="font-size:11px;color:#6b8a7a;margin-top:4px;" id="d-pct"></div>
+          <div style="font-size:15px;font-weight:500;color:#0d1f17;" id="dname"></div>
+          <div style="font-size:11px;color:#5a7a6a;margin-top:2px;" id="dmeta"></div>
+          <div style="height:4px;background:#e8f5ef;border-radius:99px;overflow:hidden;margin-top:7px;"><div id="dbar" style="height:100%;background:#1D9E75;border-radius:99px;transition:width .3s;"></div></div>
+          <div style="font-size:11px;color:#5a7a6a;margin-top:3px;" id="dpct"></div>
         </div>
       </div>
-      <div><div style="font-size:12px;color:#6b8a7a;margin-bottom:4px;">Notes</div>
-      <textarea class="notes-ta" id="d-notes" placeholder="Integration notes, keys, blockers..." oninput="saveNotes()"></textarea></div>
+      <div style="font-size:11px;color:#5a7a6a;margin-bottom:3px;">Notes</div>
+      <textarea class="nta" id="dnotes" placeholder="Integration notes, API keys, blockers..." oninput="saveNotes()"></textarea>
     </div>
-    <div id="checklist-body"></div>
+    <div id="clbody"></div>
   </div>
 </div>
 </div>
@@ -186,187 +174,188 @@ body{font-family:var(--font-sans);}
 <div id="pg-signup" class="pg">
 <div class="app">
   <div class="navbar">
-    <div class="logo">
-      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M9 3v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div><div class="logo-title">Seerbit merchant tracker</div></div>
+    <div style="display:flex;align-items:center;">
+      <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <span class="logo-title">Seerbit merchant tracker</span>
     </div>
-    <div class="nav-actions"><button class="btn btn-sm" onclick="showDash()">&#8592; Back</button></div>
+    <div class="nav-r"><button class="btn btn-sm" onclick="showPg('pg-dash');renderAll()">&#8592; Back</button></div>
   </div>
-  <div class="main">
-    <div style="max-width:420px;margin:0 auto;">
-      <div class="card" style="margin-bottom:12px;">
-        <div style="font-size:15px;font-weight:500;color:#1a2e25;margin-bottom:4px;">Join as a viewer</div>
-        <div style="font-size:12px;color:#6b8a7a;margin-bottom:1.25rem;">Get read-only access to track merchant integration progress. No login required — just register your name and email.</div>
-        <div class="field"><label>Full name</label><input type="text" id="su-name" placeholder="e.g. Adaeze Okafor"></div>
-        <div class="field"><label>Email address</label><input type="text" id="su-email" placeholder="adaeze@company.com"></div>
-        <div class="field"><label>Role</label>
-          <select id="su-role">
-            <option>Technical support engineer</option>
-            <option>Integration engineer</option>
-            <option>Account manager</option>
-            <option>Engineering lead</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <button class="btn btn-green" style="width:100%;margin-top:4px;" onclick="registerViewer()">Register as viewer</button>
+  <div class="main" style="max-width:400px;margin:0 auto;">
+    <div class="card" style="margin-bottom:10px;">
+      <div style="font-size:14px;font-weight:500;color:#0d1f17;margin-bottom:3px;">Join as a viewer</div>
+      <div style="font-size:11px;color:#5a7a6a;margin-bottom:1rem;">Get read-only access to track merchant integration progress.</div>
+      <div class="field"><label>Full name</label><input type="text" id="su-n" placeholder="e.g. Adaeze Okafor"></div>
+      <div class="field"><label>Email address</label><input type="text" id="su-e" placeholder="adaeze@seerbit.com"></div>
+      <div class="field"><label>Role</label>
+        <select id="su-r">
+          <option>Technical support engineer</option>
+          <option>Integration engineer</option>
+          <option>Account manager</option>
+          <option>Engineering lead</option>
+          <option>Other</option>
+        </select>
       </div>
-      <div class="card">
-        <div style="font-size:13px;font-weight:500;color:#1a2e25;margin-bottom:8px;">Registered viewers</div>
-        <div id="viewers-list"></div>
-      </div>
+      <button class="btn btn-g" style="width:100%;margin-top:4px;" onclick="regViewer()">Register as viewer</button>
+    </div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:500;color:#0d1f17;margin-bottom:8px;">Registered viewers</div>
+      <div id="vlist"></div>
     </div>
   </div>
 </div>
 </div>
 
-<div id="modal-add" class="modal-bg">
+<div id="modal-wrap" class="modal-wrap">
   <div class="modal">
-    <div class="modal-title" id="modal-title">Add merchant</div>
-    <div class="modal-sub" id="modal-sub">Fill in merchant details to start tracking their integration.</div>
-    <div class="field"><label>Merchant name</label><input type="text" id="m-name" placeholder="e.g. Novacare Ltd"></div>
-    <div class="field"><label>Contact email</label><input type="text" id="m-email" placeholder="dev@merchant.com"></div>
-    <div class="field"><label>Integration type</label>
-      <select id="m-type">
-        <option>Checkout integration</option>
-        <option>Virtual account only</option>
-        <option>Split settlement</option>
-        <option>Full integration</option>
-        <option>API only</option>
+    <div class="modal-title" id="mtitle">Add merchant</div>
+    <div class="modal-sub" id="msub">Fill in details to start tracking this merchant's integration.</div>
+    <div class="field"><label>Merchant / business name *</label><input type="text" id="mn" placeholder="e.g. Novacare Ltd"></div>
+    <div class="field"><label>Developer / contact email</label><input type="text" id="me" placeholder="dev@merchant.com"></div>
+    <div class="field"><label>Phone number</label><input type="text" id="mph" placeholder="+234 800 000 0000"></div>
+    <div class="field"><label>Integration type *</label>
+      <select id="mt">
+        <option value="Checkout integration">Checkout integration</option>
+        <option value="Virtual account only">Virtual account only</option>
+        <option value="Split settlement">Split settlement</option>
+        <option value="Full integration">Full integration</option>
+        <option value="API only">API only</option>
+        <option value="Card payments only">Card payments only</option>
+      </select>
+    </div>
+    <div class="field"><label>Environment</label>
+      <select id="menv">
+        <option value="Sandbox">Sandbox</option>
+        <option value="Live">Live</option>
+        <option value="Both">Both</option>
       </select>
     </div>
     <div class="field"><label>Priority</label>
-      <select id="m-priority"><option>Normal</option><option>High</option><option>Urgent</option></select>
+      <select id="mpri">
+        <option value="Normal">Normal</option>
+        <option value="High">High</option>
+        <option value="Urgent">Urgent</option>
+      </select>
     </div>
-    <div class="modal-actions">
-      <button class="btn" onclick="closeModal()">Cancel</button>
-      <button class="btn btn-green" id="modal-save-btn" onclick="saveMerchant()">Add merchant</button>
+    <div class="field"><label>Assigned engineer</label><input type="text" id="meng" placeholder="e.g. Tunde Adeyemi"></div>
+    <div class="mactions">
+      <button class="btn" style="background:#fff;color:#0d1f17;border-color:#d4e4dc;" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-g" id="msavebtn" onclick="saveMerchant()">Add merchant</button>
     </div>
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-const SECTIONS=[
+const SECS=[
   {id:"account",title:"Account & credentials",items:[{t:"Merchant account created on Seerbit dashboard",n:"sandbox.seerbit.com or business.seerbit.com"},{t:"Public key and secret key retrieved",n:"SBPUBK_... and SBSECK_..."},{t:"Webhook secret key noted"},{t:"KYC documents submitted"},{t:"Bank account linked for settlements"},{t:"Sub-accounts created if using split payments"}]},
-  {id:"env",title:"Environment configuration",items:[{t:"Sandbox tested end-to-end"},{t:"Live public key configured in production"},{t:"Base URL set correctly",n:"https://seerbitapi.com/api/v2"},{t:"API keys stored securely"},{t:"HTTPS enforced on webhook endpoints"}]},
-  {id:"checkout",title:"Checkout integration",items:[{t:"Checkout SDK or API integrated"},{t:"Payment reference unique per transaction"},{t:"Amount, currency and country passed correctly"},{t:"Customer email and name in payload"},{t:"Callback URL set and reachable"},{t:"Payment channels configured",n:"Card, transfer, USSD"},{t:"amountControl set correctly",n:"FIXEDAMOUNT or DYNAMICAMOUNT"}]},
+  {id:"env",title:"Environment configuration",items:[{t:"Sandbox tested end-to-end before going live"},{t:"Live public key configured in production"},{t:"Base URL set correctly",n:"https://seerbitapi.com/api/v2"},{t:"API keys stored securely — not hardcoded"},{t:"HTTPS enforced on webhook endpoints"}]},
+  {id:"checkout",title:"Checkout integration",items:[{t:"Checkout SDK or API integrated"},{t:"Payment reference unique per transaction"},{t:"Amount, currency (NGN) and country (NG) correct"},{t:"Customer email and full name in payload"},{t:"Callback URL set and reachable"},{t:"Payment channels configured",n:"Card, transfer, USSD"},{t:"amountControl set correctly",n:"FIXEDAMOUNT or DYNAMICAMOUNT"}]},
   {id:"transfer",title:"Virtual account / transfer",items:[{t:"Virtual account creation flow tested"},{t:"Retry reference handling implemented"},{t:"Pending status handled correctly"},{t:"Bank webhook notification endpoint implemented"},{t:"Duplicate transfer detection in place"},{t:"Response code S20 handled",n:"Account opened successfully"}]},
-  {id:"webhook",title:"Webhook handling",items:[{t:"Webhook URL registered in dashboard"},{t:"HMAC signature validation implemented"},{t:"HTTP 200 returned immediately"},{t:"Idempotency check implemented"},{t:"TRANSACTION event type handled"},{t:"Webhook retry handled gracefully"},{t:"Alert set up for failed deliveries"}]},
+  {id:"webhook",title:"Webhook handling",items:[{t:"Webhook URL registered in dashboard"},{t:"HMAC signature validation implemented"},{t:"HTTP 200 returned immediately"},{t:"Idempotency check implemented"},{t:"TRANSACTION eventType handled"},{t:"Webhook retry handled gracefully"},{t:"Alert set up for failed deliveries"}]},
   {id:"split",title:"Split settlement",items:[{t:"Split type defined — FLAT or PERCENTAGE"},{t:"Sub-account codes confirmed and active"},{t:"Split items array built correctly"},{t:"transactionFee ownership set"},{t:"Duplicate split save prevented on retries"},{t:"Settlement cycle confirmed",n:"T+1 or T+2"}]},
   {id:"errors",title:"Error handling & monitoring",items:[{t:"Response code S12 handled — do not block retry"},{t:"Response code 00 triggers fulfilment"},{t:"Token not found error monitored"},{t:"New Relic alerts set up for ERROR logs"},{t:"High response time alerts configured",n:"Alert if duration.ms > 10000"},{t:"Fallback/retry logic tested"}]},
-  {id:"golive",title:"Go-live readiness",items:[{t:"End-to-end tested in live mode"},{t:"Receipt emails confirmed"},{t:"Seerbit support contact noted"},{t:"Dashboard access for reconciliation confirmed"},{t:"Refund/reversal flow documented"},{t:"Integration sign-off obtained"}]}
+  {id:"golive",title:"Go-live readiness",items:[{t:"End-to-end tested in live mode"},{t:"Receipt emails confirmed"},{t:"Seerbit support contact noted"},{t:"Dashboard access confirmed"},{t:"Refund/reversal flow documented"},{t:"Integration sign-off obtained"}]}
 ];
-const TOTAL=SECTIONS.reduce((a,s)=>a+s.items.length,0);
-const AVATARBG=['#E1F5EE','#E6F1FB','#FAEEDA','#FAECE7','#EEEDFE','#EAF3DE','#FBEAF0'];
-const AVATARTC=['#085041','#0C447C','#633806','#712B13','#3C3489','#27500A','#72243E'];
-let merchants=[],viewers=[],currentId=null,filterVal='all',editingId=null,chartInst=null;
+const TOTAL=SECS.reduce((a,s)=>a+s.items.length,0);
+const BGS=['#E1F5EE','#E6F1FB','#FAEEDA','#FAECE7','#EEEDFE','#EAF3DE','#FBEAF0','#F1EFE8'];
+const TCS=['#085041','#0C447C','#633806','#712B13','#3C3489','#27500A','#72243E','#444441'];
+let merchants=[],viewers=[],currentId=null,filt='all',editId=null,chartI=null;
 
 async function load(){
-  try{const r=await window.storage.get('sb_v2_merchants');if(r)merchants=JSON.parse(r.value);}catch(e){merchants=[];}
-  try{const r=await window.storage.get('sb_v2_viewers');if(r)viewers=JSON.parse(r.value);}catch(e){viewers=[];}
+  try{const r=await window.storage.get('sb3_merchants');if(r)merchants=JSON.parse(r.value);}catch(e){merchants=[];}
+  try{const r=await window.storage.get('sb3_viewers');if(r)viewers=JSON.parse(r.value);}catch(e){viewers=[];}
+  SECS.forEach(s=>s._open=true);
   renderAll();
 }
-async function save(){try{await window.storage.set('sb_v2_merchants',JSON.stringify(merchants));}catch(e){}}
-async function saveViewers(){try{await window.storage.set('sb_v2_viewers',JSON.stringify(viewers));}catch(e){}}
+async function saveMerchants(){try{await window.storage.set('sb3_merchants',JSON.stringify(merchants));}catch(e){}}
+async function saveViewersSt(){try{await window.storage.set('sb3_viewers',JSON.stringify(viewers));}catch(e){}}
 
-function getProg(m){const done=Object.values(m.checks||{}).filter(Boolean).length;return{done,total:TOTAL,pct:TOTAL?Math.round(done/TOTAL*100):0};}
-function getStatus(m){const{done,pct}=getProg(m);return done===0?'new':pct===100?'done':'progress';}
-function initials(n){return n.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?';}
-function avatarStyle(n){const i=n.charCodeAt(0)%AVATARBG.length;return`background:${AVATARBG[i]};color:${AVATARTC[i]}`;}
+function prog(m){const d=Object.values(m.checks||{}).filter(Boolean).length;return{done:d,total:TOTAL,pct:Math.round(d/TOTAL*100)};}
+function status(m){const{done,pct}=prog(m);return done===0?'new':pct===100?'done':'progress';}
+function ini(n){return(n||'').split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?';}
+function avStyle(n){const i=(n.charCodeAt(0)||0)%BGS.length;return`background:${BGS[i]};color:${TCS[i]}`;}
 
-function renderAll(){renderMetrics();renderMerchants();renderChart();}
+function renderAll(){renderMetrics();renderList();renderChart();}
 
 function renderMetrics(){
-  const t=merchants.length,done=merchants.filter(m=>getStatus(m)==='done').length,inp=merchants.filter(m=>getStatus(m)==='progress').length;
-  const avg=t?Math.round(merchants.reduce((a,m)=>a+getProg(m).pct,0)/t):0;
+  const t=merchants.length,done=merchants.filter(m=>status(m)==='done').length,inp=merchants.filter(m=>status(m)==='progress').length;
+  const avg=t?Math.round(merchants.reduce((a,m)=>a+prog(m).pct,0)/t):0;
   document.getElementById('metrics').innerHTML=`
-    <div class="metric-card"><div class="metric-val">${t}</div><div class="metric-label">Total merchants</div></div>
-    <div class="metric-card"><div class="metric-val">${inp}</div><div class="metric-label">In progress</div></div>
-    <div class="metric-card"><div class="metric-val">${done}</div><div class="metric-label">Completed</div></div>
-    <div class="metric-card"><div class="metric-val">${avg}%</div><div class="metric-label">Average progress</div></div>
-  `;
+    <div class="mc"><div class="mv">${t}</div><div class="ml">Total merchants</div></div>
+    <div class="mc"><div class="mv">${inp}</div><div class="ml">In progress</div></div>
+    <div class="mc"><div class="mv">${done}</div><div class="ml">Completed</div></div>
+    <div class="mc"><div class="mv">${avg}%</div><div class="ml">Average progress</div></div>`;
 }
 
-function setFilter(v,el){filterVal=v;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderMerchants();}
+function setF(v,el){filt=v;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('act'));el.classList.add('act');renderList();}
 
-function renderMerchants(){
-  const q=(document.getElementById('search').value||'').toLowerCase();
-  let list=merchants.filter(m=>{
-    const mq=!q||m.name.toLowerCase().includes(q)||(m.email||'').toLowerCase().includes(q);
-    const s=getStatus(m);
-    const mf=filterVal==='all'||filterVal===s;
+function renderList(){
+  const q=(document.getElementById('srch').value||'').toLowerCase();
+  const list=merchants.filter(m=>{
+    const mq=!q||m.name.toLowerCase().includes(q)||(m.email||'').toLowerCase().includes(q)||(m.engineer||'').toLowerCase().includes(q);
+    const ms=status(m),mf=filt==='all'||filt===ms;
     return mq&&mf;
   });
-  const el=document.getElementById('merchant-list');
-  if(merchants.length===0){el.innerHTML='<div class="empty">No merchants yet. Add your first one above.</div>';return;}
-  if(list.length===0){el.innerHTML='<div class="empty">No results found.</div>';return;}
+  const el=document.getElementById('mlist');
+  if(!merchants.length){el.innerHTML='<div class="empty">No merchants yet. Click "+ Add merchant" to begin.</div>';return;}
+  if(!list.length){el.innerHTML='<div class="empty">No results. Try a different search or filter.</div>';return;}
   el.innerHTML=list.map(m=>{
-    const{pct}=getProg(m);const s=getStatus(m);
-    const dot=s==='done'?'dot-green':s==='progress'?'dot-amber':'dot-gray';
-    return`<div class="merchant-item" onclick="openDetail('${m.id}')">
-      <div class="avatar" style="${avatarStyle(m.name)}">${initials(m.name)}</div>
-      <div class="m-info">
-        <div class="m-name">${m.name}</div>
-        <div class="m-sub">${m.type||''}${m.email?' · '+m.email:''}</div>
-        <div class="pbar"><div class="pbar-fill" style="width:${pct}%"></div></div>
+    const{pct}=prog(m),s=status(m);
+    const pill=s==='done'?'sp-done':s==='progress'?'sp-prog':'sp-new';
+    const ptxt=s==='done'?'Complete':s==='progress'?'In progress':'Not started';
+    return`<div class="m-item" onclick="openDetail('${m.id}')">
+      <div class="av" style="${avStyle(m.name)};width:34px;height:34px;font-size:12px;">${ini(m.name)}</div>
+      <div style="flex:1;min-width:0;">
+        <div class="mn">${m.name}</div>
+        <div class="ms">${m.type||''}${m.email?' · '+m.email:''}${m.engineer?' · '+m.engineer:''}</div>
+        <div class="pbar"><div class="pf" style="width:${pct}%"></div></div>
       </div>
-      <div style="display:flex;align-items:center;gap:6px;">
-        <span class="status-dot ${dot}"></span>
-        <span class="m-pct">${pct}%</span>
-      </div>
+      <span class="spill ${pill}">${ptxt} ${pct}%</span>
     </div>`;
   }).join('');
 }
 
 function renderChart(){
+  const ctx=document.getElementById('wchart');if(!ctx)return;
+  if(chartI){chartI.destroy();}
   const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  const data=days.map((_,i)=>{
-    const base=[4,7,5,9,11,3,2][i];
-    return Math.max(0,base+Math.floor(Math.random()*3));
-  });
-  const ctx=document.getElementById('weekChart');
-  if(!ctx)return;
-  if(chartInst){chartInst.destroy();}
-  chartInst=new Chart(ctx,{
-    type:'bar',
-    data:{labels:days,datasets:[{label:'Check-ins',data,backgroundColor:'#1D9E75',borderRadius:6,borderSkipped:false}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:v=>' '+v.raw+' check-ins'}}},scales:{x:{grid:{display:false},ticks:{color:'#6b8a7a',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#6b8a7a',font:{size:11},stepSize:2}}}}
-  });
+  const seed=merchants.length;
+  const data=days.map((_,i)=>Math.max(0,[4,7,5,9,11,3,2][i]+seed%3));
+  chartI=new Chart(ctx,{type:'bar',data:{labels:days,datasets:[{label:'Check-ins',data,backgroundColor:'#1D9E75',borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#5a7a6a',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#5a7a6a',font:{size:11},stepSize:2}}}}});
 }
 
 function openDetail(id){
   currentId=id;const m=merchants.find(x=>x.id===id);if(!m)return;
-  const ac=avatarStyle(m.name);
-  document.getElementById('d-avatar').style.cssText=ac+';width:48px;height:48px;font-size:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;';
-  document.getElementById('d-avatar').textContent=initials(m.name);
-  document.getElementById('d-name').textContent=m.name;
-  document.getElementById('d-meta').textContent=[m.type,m.email,m.priority!=='Normal'?m.priority+' priority':''].filter(Boolean).join(' · ');
-  document.getElementById('d-notes').value=m.notes||'';
-  renderDetailChecklist();
-  showPage('pg-detail');
+  const av=document.getElementById('dav');
+  av.style.cssText=avStyle(m.name)+';width:44px;height:44px;font-size:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;';
+  av.textContent=ini(m.name);
+  document.getElementById('dname').textContent=m.name;
+  const meta=[m.type,m.environment,m.email,m.phone,m.priority!=='Normal'?m.priority+' priority':'',m.engineer?'Assigned: '+m.engineer:''].filter(Boolean).join(' · ');
+  document.getElementById('dmeta').textContent=meta;
+  document.getElementById('dnotes').value=m.notes||'';
+  renderCL();showPg('pg-detail');
 }
 
-function renderDetailChecklist(){
+function renderCL(){
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
-  const{done,pct}=getProg(m);
-  document.getElementById('d-bar').style.width=pct+'%';
-  document.getElementById('d-pct').textContent=done+' of '+TOTAL+' items ('+pct+'%)';
+  const{done,pct}=prog(m);
+  document.getElementById('dbar').style.width=pct+'%';
+  document.getElementById('dpct').textContent=done+' of '+TOTAL+' items complete ('+pct+'%)';
   const checks=m.checks||{};
-  document.getElementById('checklist-body').innerHTML=SECTIONS.map(s=>{
+  document.getElementById('clbody').innerHTML=SECS.map(s=>{
     const sdone=s.items.filter((_,i)=>checks[s.id+'_'+i]).length;
-    const isOpen=s._open!==false;
-    return`<div style="margin-bottom:8px;background:#fff;border-radius:12px;border:0.5px solid #e0e8e4;overflow:hidden;">
+    const isOp=s._open!==false;
+    return`<div style="margin-bottom:8px;background:#fff;border-radius:10px;border:0.5px solid #d4e4dc;overflow:hidden;">
       <div class="sec-hdr" onclick="toggleSec('${s.id}')">
-        <span class="chev ${isOpen?'open':''}" id="chev-${s.id}">&#9654;</span>
-        <span class="sec-title">${s.title}</span>
-        <span class="sec-badge">${sdone}/${s.items.length}</span>
+        <span class="chev ${isOp?'op':''}" id="chv-${s.id}">&#9654;</span>
+        <span class="stitle">${s.title}</span>
+        <span class="sbadge">${sdone}/${s.items.length}</span>
       </div>
-      <div class="items-wrap ${isOpen?'open':''}" id="sec-${s.id}" style="padding:4px 0;">
-        ${s.items.map((item,i)=>{
-          const key=s.id+'_'+i,checked=!!checks[key];
-          return`<div class="item-row ${checked?'done':''}" onclick="toggleItem('${s.id}',${i})">
-            <div class="cbox"><svg class="ck-svg" width="8" height="6" viewBox="0 0 8 6"><path d="M1 3l2 2 4-4" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><div class="item-t">${item.t}</div>${item.n?`<div class="item-n">${item.n}</div>`:''}</div>
+      <div class="iw ${isOp?'op':''}" id="sw-${s.id}" style="padding:4px 0;">
+        ${s.items.map((item,i)=>{const key=s.id+'_'+i,chkd=!!checks[key];
+          return`<div class="irow ${chkd?'ck':''}" onclick="toggleItem('${s.id}',${i})">
+            <div class="cbox"><svg class="cksvg" width="8" height="6" viewBox="0 0 8 6"><path d="M1 3l2 2 4-4" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="itxt">${item.t}</div>${item.n?`<div class="inote">${item.n}</div>`:''}</div>
           </div>`;
         }).join('')}
       </div>
@@ -374,79 +363,109 @@ function renderDetailChecklist(){
   }).join('');
 }
 
-function toggleSec(id){const s=SECTIONS.find(x=>x.id===id);s._open=s._open===false?true:false;renderDetailChecklist();}
+function toggleSec(id){const s=SECS.find(x=>x.id===id);s._open=s._open===false;renderCL();}
 function toggleItem(sid,idx){
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
   if(!m.checks)m.checks={};
-  const key=sid+'_'+idx;m.checks[key]=!m.checks[key];
-  save();renderDetailChecklist();
+  const k=sid+'_'+idx;m.checks[k]=!m.checks[k];
+  saveMerchants();renderCL();
 }
-function saveNotes(){const m=merchants.find(x=>x.id===currentId);if(!m)return;m.notes=document.getElementById('d-notes').value;save();}
+function saveNotes(){const m=merchants.find(x=>x.id===currentId);if(!m)return;m.notes=document.getElementById('dnotes').value;saveMerchants();}
 
-function openAdd(){editingId=null;document.getElementById('modal-title').textContent='Add merchant';document.getElementById('modal-save-btn').textContent='Add merchant';document.getElementById('m-name').value='';document.getElementById('m-email').value='';document.getElementById('m-type').value='Checkout integration';document.getElementById('m-priority').value='Normal';document.getElementById('modal-add').classList.add('open');}
-function openEdit(){const m=merchants.find(x=>x.id===currentId);if(!m)return;editingId=currentId;document.getElementById('modal-title').textContent='Edit merchant';document.getElementById('modal-save-btn').textContent='Save changes';document.getElementById('m-name').value=m.name||'';document.getElementById('m-email').value=m.email||'';document.getElementById('m-type').value=m.type||'Checkout integration';document.getElementById('m-priority').value=m.priority||'Normal';document.getElementById('modal-add').classList.add('open');}
-function closeModal(){document.getElementById('modal-add').classList.remove('open');editingId=null;}
+function openAdd(){
+  editId=null;
+  document.getElementById('mtitle').textContent='Add merchant';
+  document.getElementById('msub').textContent="Fill in details to start tracking this merchant's integration.";
+  document.getElementById('msavebtn').textContent='Add merchant';
+  ['mn','me','mph','meng'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('mt').value='Checkout integration';
+  document.getElementById('menv').value='Sandbox';
+  document.getElementById('mpri').value='Normal';
+  document.getElementById('modal-wrap').classList.add('op');
+}
+
+function openEdit(){
+  const m=merchants.find(x=>x.id===currentId);if(!m)return;
+  editId=currentId;
+  document.getElementById('mtitle').textContent='Edit merchant';
+  document.getElementById('msub').textContent='Update merchant details.';
+  document.getElementById('msavebtn').textContent='Save changes';
+  document.getElementById('mn').value=m.name||'';
+  document.getElementById('me').value=m.email||'';
+  document.getElementById('mph').value=m.phone||'';
+  document.getElementById('mt').value=m.type||'Checkout integration';
+  document.getElementById('menv').value=m.environment||'Sandbox';
+  document.getElementById('mpri').value=m.priority||'Normal';
+  document.getElementById('meng').value=m.engineer||'';
+  document.getElementById('modal-wrap').classList.add('op');
+}
+
+function closeModal(){document.getElementById('modal-wrap').classList.remove('op');editId=null;}
 
 function saveMerchant(){
-  const name=document.getElementById('m-name').value.trim();if(!name)return;
-  if(editingId){
-    const m=merchants.find(x=>x.id===editingId);
-    if(m){m.name=name;m.email=document.getElementById('m-email').value.trim();m.type=document.getElementById('m-type').value;m.priority=document.getElementById('m-priority').value;}
-    closeModal();if(currentId===editingId)openDetail(editingId);
-  } else {
-    merchants.push({id:'M'+Date.now(),name,email:document.getElementById('m-email').value.trim(),type:document.getElementById('m-type').value,priority:document.getElementById('m-priority').value,added:new Date().toISOString(),checks:{},notes:''});
+  const name=document.getElementById('mn').value.trim();
+  if(!name){document.getElementById('mn').focus();return;}
+  const d={name,email:document.getElementById('me').value.trim(),phone:document.getElementById('mph').value.trim(),type:document.getElementById('mt').value,environment:document.getElementById('menv').value,priority:document.getElementById('mpri').value,engineer:document.getElementById('meng').value.trim()};
+  if(editId){
+    const m=merchants.find(x=>x.id===editId);
+    if(m)Object.assign(m,d);
+    closeModal();
+    if(currentId===editId)openDetail(editId);
+  }else{
+    merchants.push({id:'M'+Date.now(),added:new Date().toISOString(),checks:{},notes:'',...d});
     closeModal();
   }
-  save();renderAll();
+  saveMerchants();renderAll();
 }
 
-function deleteMerchant(){
+function delMerchant(){
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
-  if(!confirm('Delete '+m.name+'?'))return;
+  if(!confirm('Delete '+m.name+'? This cannot be undone.'))return;
   merchants=merchants.filter(x=>x.id!==currentId);
-  save();showDash();
+  saveMerchants();showPg('pg-dash');renderAll();
 }
 
-function openSignup(){renderViewers();showPage('pg-signup');}
-function registerViewer(){
-  const name=document.getElementById('su-name').value.trim(),email=document.getElementById('su-email').value.trim(),role=document.getElementById('su-role').value;
-  if(!name||!email)return;
+function regViewer(){
+  const name=document.getElementById('su-n').value.trim(),email=document.getElementById('su-e').value.trim(),role=document.getElementById('su-r').value;
+  if(!name||!email){alert('Name and email are required.');return;}
   if(viewers.find(v=>v.email===email)){alert('This email is already registered.');return;}
   viewers.push({id:'V'+Date.now(),name,email,role,joined:new Date().toISOString()});
-  saveViewers();renderViewers();
-  document.getElementById('su-name').value='';document.getElementById('su-email').value='';
+  saveViewersSt();renderViewers();
+  document.getElementById('su-n').value='';document.getElementById('su-e').value='';
 }
+
 function renderViewers(){
-  const el=document.getElementById('viewers-list');
-  if(!el)return;
-  if(viewers.length===0){el.innerHTML='<div style="font-size:12px;color:#6b8a7a;text-align:center;padding:1rem 0;">No viewers registered yet.</div>';return;}
-  el.innerHTML=viewers.map(v=>`
-    <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid #f0f4f2;">
-      <div class="avatar" style="${avatarStyle(v.name)};width:30px;height:30px;font-size:11px;">${initials(v.name)}</div>
-      <div style="flex:1;"><div style="font-size:13px;color:#1a2e25;">${v.name}</div><div style="font-size:11px;color:#6b8a7a;">${v.email} · ${v.role}</div></div>
-      <button onclick="removeViewer('${v.id}')" style="font-size:11px;color:#A32D2D;background:none;border:none;cursor:pointer;">Remove</button>
-    </div>`).join('');
+  const el=document.getElementById('vlist');if(!el)return;
+  if(!viewers.length){el.innerHTML='<div style="font-size:12px;color:#5a7a6a;text-align:center;padding:.75rem 0;">No viewers registered yet.</div>';return;}
+  el.innerHTML=viewers.map(v=>`<div class="viewer-row">
+    <div class="av" style="${avStyle(v.name)};width:28px;height:28px;font-size:10px;">${ini(v.name)}</div>
+    <div style="flex:1;"><div style="font-size:12px;color:#0d1f17;">${v.name}</div><div style="font-size:11px;color:#5a7a6a;">${v.email} · ${v.role}</div></div>
+    <button onclick="removeViewer('${v.id}')" style="font-size:11px;color:#A32D2D;background:none;border:none;cursor:pointer;font-family:var(--font-sans);">Remove</button>
+  </div>`).join('');
 }
-function removeViewer(id){viewers=viewers.filter(v=>v.id!==id);saveViewers();renderViewers();}
 
-function exportCSV(){
-  const rows=[['Name','Email','Type','Priority','Progress %','Completed','Total','Status']];
-  merchants.forEach(m=>{const{done,pct}=getProg(m);rows.push([m.name,m.email||'',m.type||'',m.priority||'Normal',pct,done,TOTAL,getStatus(m)]);});
+function removeViewer(id){viewers=viewers.filter(v=>v.id!==id);saveViewersSt();renderViewers();}
+
+function expCSV(){
+  const rows=[['Name','Email','Phone','Type','Environment','Priority','Engineer','Progress %','Done','Total','Status','Added']];
+  merchants.forEach(m=>{const{done,pct}=prog(m);rows.push([m.name,m.email||'',m.phone||'',m.type||'',m.environment||'',m.priority||'Normal',m.engineer||'',pct,done,TOTAL,status(m),m.added?m.added.slice(0,10):'']);});
   const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
-  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);a.download='seerbit_merchants_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+  dl('data:text/csv;charset=utf-8,'+encodeURIComponent(csv),'seerbit_merchants_'+now()+'.csv');
 }
-function exportJSON(){
-  const data=merchants.map(m=>({...m,progress:getProg(m),status:getStatus(m)}));
-  const a=document.createElement('a');a.href='data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(data,null,2));a.download='seerbit_merchants_'+new Date().toISOString().slice(0,10)+'.json';a.click();
+function expJSON(){
+  const data=merchants.map(m=>({...m,progress:prog(m),status:status(m)}));
+  dl('data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(data,null,2)),'seerbit_merchants_'+now()+'.json');
 }
-function copyShareLink(){
-  const txt='Seerbit Merchant Tracker — track your integration progress here';
-  navigator.clipboard?navigator.clipboard.writeText(txt).then(()=>alert('Share text copied!')):alert(txt);
+function dl(href,name){const a=document.createElement('a');a.href=href;a.download=name;a.click();}
+function now(){return new Date().toISOString().slice(0,10);}
+function copyLink(){const t='Seerbit Merchant Integration Tracker';navigator.clipboard?navigator.clipboard.writeText(t).then(()=>alert('Copied!')):alert(t);}
+
+function showPg(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
+  document.getElementById(id).classList.add('act');
+  if(id==='pg-signup')renderViewers();
 }
 
-function showPage(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
-function showDash(){showPage('pg-dashboard');renderAll();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-SECTIONS.forEach(s=>s._open=true);
 load();
 </script>
