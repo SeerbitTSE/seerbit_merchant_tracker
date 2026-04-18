@@ -3,16 +3,23 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
 .app{background:#f0f4f2;min-height:600px;padding-bottom:2rem;}
-.navbar{background:#1a2e25;border-bottom:0.5px solid #0d1a14;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:58px;}
+.navbar{background:#1a2e25;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:58px;}
 .logo-icon{width:30px;height:30px;background:#1D9E75;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .logo-title{font-size:14px;font-weight:500;color:#fff;margin-left:9px;}
 .logo-sub{font-size:11px;color:#9FE1CB;display:block;margin-left:9px;}
 .nav-r{display:flex;gap:8px;align-items:center;}
-.btn{font-size:12px;padding:6px 13px;border-radius:7px;border:0.5px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;font-family:var(--font-sans);white-space:nowrap;}
+.role-badge{font-size:11px;padding:3px 9px;border-radius:99px;font-weight:500;}
+.rb-admin{background:#1D9E75;color:#fff;}
+.rb-viewer{background:rgba(255,255,255,0.15);color:#9FE1CB;}
+.btn{font-size:12px;padding:6px 13px;border-radius:7px;border:0.5px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;font-family:var(--font-sans);white-space:nowrap;}
 .btn:hover{background:rgba(255,255,255,0.2);}
 .btn-g{background:#1D9E75;border-color:#1D9E75;color:#fff;}
-.btn-g:hover{background:#0F6E56;border-color:#0F6E56;}
+.btn-g:hover{background:#0F6E56;}
 .btn-sm{padding:5px 11px;font-size:12px;}
+.btn-light{background:#fff;color:#0d1f17;border-color:#d4e4dc;}
+.btn-light:hover{background:#f0f4f2;}
+.btn-red{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#F09595;}
+.btn-red:hover{background:#FCEBEB;color:#A32D2D;border-color:#F09595;}
 .main{padding:1.25rem;}
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:1.1rem;}
 .mc{background:#fff;border-radius:10px;padding:1rem 1.1rem;border:0.5px solid #d4e4dc;}
@@ -21,23 +28,24 @@
 .grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-bottom:1.1rem;}
 .card{background:#fff;border-radius:10px;border:0.5px solid #d4e4dc;padding:1.1rem;}
 .ct{font-size:13px;font-weight:500;color:#0d1f17;margin-bottom:.9rem;}
-.invite-banner{background:#1D9E75;border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;gap:12px;}
-.ib-title{font-size:13px;font-weight:500;color:#fff;}
-.ib-sub{font-size:11px;color:#9FE1CB;margin-top:2px;}
+.banner{border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;gap:12px;}
+.banner-g{background:#1D9E75;}
+.banner-title{font-size:13px;font-weight:500;color:#fff;}
+.banner-sub{font-size:11px;color:#9FE1CB;margin-top:2px;}
 .btn-w{background:#fff;color:#1D9E75;border:none;border-radius:7px;font-size:12px;padding:6px 13px;cursor:pointer;font-family:var(--font-sans);font-weight:500;white-space:nowrap;}
 .btn-w:hover{background:#e1f5ee;}
 .search-box{width:100%;padding:7px 10px 7px 28px;border:0.5px solid #d4e4dc;border-radius:7px;font-size:12px;color:#0d1f17;background:#f8fbf9;font-family:var(--font-sans);margin-bottom:10px;}
 .search-box:focus{outline:none;border-color:#1D9E75;background:#fff;}
 .s-wrap{position:relative;}
 .s-ico{position:absolute;left:9px;top:50%;transform:translateY(-50%);font-size:13px;color:#5a7a6a;}
-.tabs{display:flex;gap:0;border-bottom:0.5px solid #d4e4dc;margin-bottom:10px;}
+.tabs{display:flex;border-bottom:0.5px solid #d4e4dc;margin-bottom:10px;}
 .tab{font-size:12px;padding:6px 12px;cursor:pointer;color:#5a7a6a;border-bottom:2px solid transparent;margin-bottom:-0.5px;background:none;border-top:none;border-left:none;border-right:none;font-family:var(--font-sans);}
 .tab.act{color:#1D9E75;border-bottom-color:#1D9E75;font-weight:500;}
 .m-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:0.5px solid #f0f4f2;cursor:pointer;}
 .m-item:last-child{border-bottom:none;}
 .m-item:hover .mn{color:#1D9E75;}
 .av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;flex-shrink:0;}
-.mn{font-size:13px;font-weight:500;color:#0d1f17;}
+.mn{font-size:13px;font-weight:500;color:#0d1f17;transition:color .15s;}
 .ms{font-size:11px;color:#5a7a6a;margin-top:1px;}
 .pbar{height:3px;background:#e8f5ef;border-radius:99px;overflow:hidden;margin-top:4px;}
 .pf{height:100%;background:#1D9E75;border-radius:99px;}
@@ -58,8 +66,9 @@
 .chev.op{transform:rotate(90deg);}
 .iw{display:none;}
 .iw.op{display:block;}
-.irow{display:flex;align-items:flex-start;gap:9px;padding:6px 11px;border-radius:7px;cursor:pointer;margin-bottom:2px;}
-.irow:hover{background:#f0f4f2;}
+.irow{display:flex;align-items:flex-start;gap:9px;padding:6px 11px;border-radius:7px;margin-bottom:2px;}
+.irow.clickable{cursor:pointer;}
+.irow.clickable:hover{background:#f0f4f2;}
 .irow.ck{opacity:.5;}
 .cbox{width:15px;height:15px;border-radius:4px;border:1.5px solid #b8d4c4;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
 .irow.ck .cbox{background:#1D9E75;border-color:#1D9E75;}
@@ -69,7 +78,8 @@
 .inote{font-size:11px;color:#5a7a6a;margin-top:1px;}
 .irow.ck .itxt{text-decoration:line-through;color:#5a7a6a;}
 .nta{width:100%;min-height:52px;font-size:12px;font-family:var(--font-sans);padding:7px 9px;border:0.5px solid #b8d4c4;border-radius:7px;background:#fff;color:#0d1f17;resize:vertical;}
-.modal-wrap{background:rgba(0,0,0,0.45);border-radius:10px;padding:1.5rem;display:none;align-items:flex-start;justify-content:center;min-height:300px;margin-bottom:1rem;}
+.nta:disabled{background:#f8fbf9;color:#5a7a6a;cursor:not-allowed;}
+.modal-wrap{background:rgba(0,0,0,0.45);border-radius:10px;padding:1.5rem;display:none;align-items:flex-start;justify-content:center;min-height:280px;margin-bottom:1rem;}
 .modal-wrap.op{display:flex;}
 .modal{background:#fff;border:0.5px solid #d4e4dc;border-radius:10px;padding:1.25rem;width:100%;max-width:360px;}
 .modal-title{font-size:14px;font-weight:500;color:#0d1f17;margin-bottom:3px;}
@@ -81,58 +91,91 @@
 .mactions{display:flex;gap:7px;justify-content:flex-end;margin-top:.9rem;}
 .viewer-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:0.5px solid #f0f4f2;}
 .viewer-row:last-child{border-bottom:none;}
-.btn-danger{color:#A32D2D;border-color:rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);}
-.btn-danger:hover{background:#FCEBEB;color:#A32D2D;border-color:#F09595;}
+.readonly-bar{background:#FAEEDA;border-radius:0;padding:7px 1.25rem;font-size:12px;color:#633806;text-align:center;}
+.err-msg{font-size:11px;color:#A32D2D;margin-top:5px;display:none;}
+.err-msg.show{display:block;}
+.loading-screen{display:flex;align-items:center;justify-content:center;min-height:300px;background:#f0f4f2;}
+.spinner{width:24px;height:24px;border:2px solid #d4e4dc;border-top-color:#1D9E75;border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
 </style>
 
-<h2 class="sr-only">Seerbit merchant integration tracker — manage multiple merchant onboarding with checklists, progress tracking, viewer signups, and export</h2>
+<h2 class="sr-only">Seerbit merchant integration tracker — shared storage with admin and viewer roles</h2>
 
-<div id="pg-dash" class="pg act">
+<div id="pg-loading" class="pg act">
+  <div class="loading-screen"><div class="spinner"></div></div>
+</div>
+
+<div id="pg-login" class="pg">
+  <div style="background:#f0f4f2;min-height:500px;display:flex;align-items:center;justify-content:center;padding:2rem;">
+    <div style="width:100%;max-width:340px;">
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <div style="width:44px;height:44px;background:#1D9E75;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M10 3v14" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div style="font-size:16px;font-weight:500;color:#0d1f17;">Seerbit merchant tracker</div>
+        <div style="font-size:12px;color:#5a7a6a;margin-top:3px;">Sign in to continue</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:0;border:0.5px solid #d4e4dc;border-radius:7px;overflow:hidden;margin-bottom:1rem;">
+          <button id="tab-admin" onclick="switchLoginTab('admin')" style="flex:1;font-size:12px;padding:7px;background:#1a2e25;color:#fff;border:none;cursor:pointer;font-family:var(--font-sans);">Admin</button>
+          <button id="tab-viewer" onclick="switchLoginTab('viewer')" style="flex:1;font-size:12px;padding:7px;background:#fff;color:#5a7a6a;border:none;cursor:pointer;font-family:var(--font-sans);">Viewer</button>
+        </div>
+        <div id="admin-login-form">
+          <div class="field"><label>Admin password</label><input type="password" id="admin-pw" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doAdminLogin()"></div>
+          <div class="err-msg" id="admin-err">Incorrect password. Try again.</div>
+          <button class="btn-g" style="width:100%;border-radius:7px;padding:8px;font-size:13px;border:none;cursor:pointer;font-family:var(--font-sans);margin-top:4px;" onclick="doAdminLogin()">Sign in as admin</button>
+          <div style="font-size:11px;color:#5a7a6a;text-align:center;margin-top:10px;">Default password: <strong style="color:#0d1f17;">seerbit2024</strong></div>
+        </div>
+        <div id="viewer-login-form" style="display:none;">
+          <div class="field"><label>Your name</label><input type="text" id="viewer-name" placeholder="e.g. Adaeze Okafor" onkeydown="if(event.key==='Enter')doViewerLogin()"></div>
+          <div class="field"><label>Email address</label><input type="text" id="viewer-email" placeholder="adaeze@seerbit.com" onkeydown="if(event.key==='Enter')doViewerLogin()"></div>
+          <div class="err-msg" id="viewer-err">Please enter your name and email.</div>
+          <button class="btn-g" style="width:100%;border-radius:7px;padding:8px;font-size:13px;border:none;cursor:pointer;font-family:var(--font-sans);margin-top:4px;" onclick="doViewerLogin()">Continue as viewer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pg-dash" class="pg">
 <div class="app">
   <div class="navbar">
     <div style="display:flex;align-items:center;">
       <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div>
-        <span class="logo-title">Seerbit merchant tracker</span>
-        <span class="logo-sub">Onboarding · Progress · Collaboration</span>
-      </div>
+      <div><span class="logo-title">Seerbit merchant tracker</span><span class="logo-sub">Onboarding · Progress · Collaboration</span></div>
     </div>
     <div class="nav-r">
-      <button class="btn btn-sm" onclick="showPg('pg-signup')">Invite team</button>
-      <button class="btn btn-g btn-sm" onclick="openAdd()">+ Add merchant</button>
+      <span class="role-badge" id="role-badge">Viewer</span>
+      <span style="font-size:11px;color:#9FE1CB;" id="nav-username"></span>
+      <button class="btn btn-sm" id="btn-settings" onclick="showPg('pg-settings')" style="display:none;">Settings</button>
+      <button class="btn btn-g btn-sm" id="btn-add" onclick="openAdd()" style="display:none;">+ Add merchant</button>
+      <button class="btn btn-sm" onclick="doLogout()">Sign out</button>
     </div>
   </div>
+  <div id="readonly-notice" class="readonly-bar" style="display:none;">You are in read-only view. Sign in as admin to make changes.</div>
   <div class="main">
     <div class="metrics" id="metrics"></div>
-    <div class="invite-banner">
-      <div><div class="ib-title">Invite teammates to view merchant progress</div><div class="ib-sub">Share read-only access — colleagues can track integrations without editing</div></div>
-      <button class="btn-w" onclick="showPg('pg-signup')">Sign up / invite</button>
-    </div>
     <div class="grid2">
       <div class="card" style="min-height:300px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
-          <div class="ct" style="margin-bottom:0;">Merchants</div>
-        </div>
-        <div class="s-wrap"><span class="s-ico">&#9906;</span><input class="search-box" type="text" id="srch" placeholder="Search by name or email..." oninput="renderList()"></div>
+        <div class="s-wrap"><span class="s-ico">&#9906;</span><input class="search-box" type="text" id="srch" placeholder="Search merchants..." oninput="renderList()"></div>
         <div class="tabs">
-          <button class="tab act" data-f="all" onclick="setF('all',this)">All</button>
-          <button class="tab" data-f="progress" onclick="setF('progress',this)">In progress</button>
-          <button class="tab" data-f="done" onclick="setF('done',this)">Complete</button>
-          <button class="tab" data-f="new" onclick="setF('new',this)">Not started</button>
+          <button class="tab act" onclick="setF('all',this)">All</button>
+          <button class="tab" onclick="setF('progress',this)">In progress</button>
+          <button class="tab" onclick="setF('done',this)">Complete</button>
+          <button class="tab" onclick="setF('new',this)">Not started</button>
         </div>
-        <div id="mlist" style="max-height:260px;overflow-y:auto;"></div>
+        <div id="mlist" style="max-height:300px;overflow-y:auto;"></div>
       </div>
       <div class="card">
-        <div class="ct">Weekly activity</div>
-        <div style="position:relative;height:220px;"><canvas id="wchart" role="img" aria-label="Bar chart of weekly merchant check-in activity"></canvas></div>
+        <div class="ct">Integration types</div>
+        <div id="type-chart" style="padding-top:4px;"></div>
       </div>
     </div>
     <div class="footer-row">
-      <div><div style="font-size:13px;font-weight:500;color:#0d1f17;">Export & reports</div><div style="font-size:11px;color:#5a7a6a;margin-top:2px;">Download merchant integration data</div></div>
+      <div><div style="font-size:13px;font-weight:500;color:#0d1f17;">Export</div><div style="font-size:11px;color:#5a7a6a;">Download merchant data</div></div>
       <div class="exp-btns">
         <button class="btn btn-g btn-sm" onclick="expCSV()">Export CSV</button>
-        <button class="btn btn-sm" style="border-color:#1D9E75;color:#1D9E75;background:#fff;" onclick="expJSON()">Export JSON</button>
-        <button class="btn btn-sm" style="background:#fff;color:#0d1f17;border-color:#d4e4dc;" onclick="copyLink()">Copy share link</button>
+        <button class="btn-light btn-sm btn" onclick="expJSON()">Export JSON</button>
       </div>
     </div>
   </div>
@@ -147,11 +190,13 @@
       <span class="logo-title">Seerbit merchant tracker</span>
     </div>
     <div class="nav-r">
+      <span class="role-badge" id="role-badge2">Viewer</span>
       <button class="btn btn-sm" onclick="showPg('pg-dash');renderAll()">&#8592; Dashboard</button>
-      <button class="btn btn-sm" onclick="openEdit()">Edit</button>
-      <button class="btn btn-sm btn-danger" onclick="delMerchant()">Delete</button>
+      <button class="btn btn-sm" id="btn-edit" onclick="openEdit()" style="display:none;">Edit</button>
+      <button class="btn btn-sm btn-red" id="btn-del" onclick="delMerchant()" style="display:none;">Delete</button>
     </div>
   </div>
+  <div id="readonly-notice2" class="readonly-bar" style="display:none;">Read-only view. Sign in as admin to update checklist items.</div>
   <div class="main">
     <div class="card" style="margin-bottom:10px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
@@ -171,31 +216,25 @@
 </div>
 </div>
 
-<div id="pg-signup" class="pg">
+<div id="pg-settings" class="pg">
 <div class="app">
   <div class="navbar">
     <div style="display:flex;align-items:center;">
       <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
       <span class="logo-title">Seerbit merchant tracker</span>
     </div>
-    <div class="nav-r"><button class="btn btn-sm" onclick="showPg('pg-dash');renderAll()">&#8592; Back</button></div>
+    <div class="nav-r"><button class="btn btn-sm" onclick="showPg('pg-dash')">&#8592; Back</button></div>
   </div>
   <div class="main" style="max-width:400px;margin:0 auto;">
     <div class="card" style="margin-bottom:10px;">
-      <div style="font-size:14px;font-weight:500;color:#0d1f17;margin-bottom:3px;">Join as a viewer</div>
-      <div style="font-size:11px;color:#5a7a6a;margin-bottom:1rem;">Get read-only access to track merchant integration progress.</div>
-      <div class="field"><label>Full name</label><input type="text" id="su-n" placeholder="e.g. Adaeze Okafor"></div>
-      <div class="field"><label>Email address</label><input type="text" id="su-e" placeholder="adaeze@seerbit.com"></div>
-      <div class="field"><label>Role</label>
-        <select id="su-r">
-          <option>Technical support engineer</option>
-          <option>Integration engineer</option>
-          <option>Account manager</option>
-          <option>Engineering lead</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <button class="btn btn-g" style="width:100%;margin-top:4px;" onclick="regViewer()">Register as viewer</button>
+      <div style="font-size:14px;font-weight:500;color:#0d1f17;margin-bottom:3px;">Change admin password</div>
+      <div style="font-size:11px;color:#5a7a6a;margin-bottom:1rem;">Share the new password with your team members who need admin access.</div>
+      <div class="field"><label>Current password</label><input type="password" id="pw-cur" placeholder="Current password"></div>
+      <div class="field"><label>New password</label><input type="password" id="pw-new" placeholder="New password (min 6 chars)"></div>
+      <div class="field"><label>Confirm new password</label><input type="password" id="pw-confirm" placeholder="Confirm new password"></div>
+      <div class="err-msg" id="pw-err"></div>
+      <div id="pw-ok" style="font-size:11px;color:#085041;display:none;margin-top:5px;">Password updated successfully!</div>
+      <button class="btn-g" style="width:100%;border-radius:7px;padding:8px;font-size:13px;border:none;cursor:pointer;font-family:var(--font-sans);margin-top:8px;" onclick="changePassword()">Update password</button>
     </div>
     <div class="card">
       <div style="font-size:13px;font-weight:500;color:#0d1f17;margin-bottom:8px;">Registered viewers</div>
@@ -208,37 +247,29 @@
 <div id="modal-wrap" class="modal-wrap">
   <div class="modal">
     <div class="modal-title" id="mtitle">Add merchant</div>
-    <div class="modal-sub" id="msub">Fill in details to start tracking this merchant's integration.</div>
+    <div class="modal-sub">Fill in details to start tracking this merchant's integration.</div>
     <div class="field"><label>Merchant / business name *</label><input type="text" id="mn" placeholder="e.g. Novacare Ltd"></div>
     <div class="field"><label>Developer / contact email</label><input type="text" id="me" placeholder="dev@merchant.com"></div>
     <div class="field"><label>Phone number</label><input type="text" id="mph" placeholder="+234 800 000 0000"></div>
     <div class="field"><label>Integration type *</label>
       <select id="mt">
-        <option value="Checkout integration">Checkout integration</option>
-        <option value="Virtual account only">Virtual account only</option>
-        <option value="Split settlement">Split settlement</option>
-        <option value="Full integration">Full integration</option>
-        <option value="API only">API only</option>
-        <option value="Card payments only">Card payments only</option>
+        <option>Checkout integration</option>
+        <option>Virtual account only</option>
+        <option>Split settlement</option>
+        <option>Full integration</option>
+        <option>API only</option>
+        <option>Card payments only</option>
       </select>
     </div>
     <div class="field"><label>Environment</label>
-      <select id="menv">
-        <option value="Sandbox">Sandbox</option>
-        <option value="Live">Live</option>
-        <option value="Both">Both</option>
-      </select>
+      <select id="menv"><option>Sandbox</option><option>Live</option><option>Both</option></select>
     </div>
     <div class="field"><label>Priority</label>
-      <select id="mpri">
-        <option value="Normal">Normal</option>
-        <option value="High">High</option>
-        <option value="Urgent">Urgent</option>
-      </select>
+      <select id="mpri"><option>Normal</option><option>High</option><option>Urgent</option></select>
     </div>
     <div class="field"><label>Assigned engineer</label><input type="text" id="meng" placeholder="e.g. Tunde Adeyemi"></div>
     <div class="mactions">
-      <button class="btn" style="background:#fff;color:#0d1f17;border-color:#d4e4dc;" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-light" onclick="closeModal()">Cancel</button>
       <button class="btn btn-g" id="msavebtn" onclick="saveMerchant()">Add merchant</button>
     </div>
   </div>
@@ -248,7 +279,7 @@
 <script>
 const SECS=[
   {id:"account",title:"Account & credentials",items:[{t:"Merchant account created on Seerbit dashboard",n:"sandbox.seerbit.com or business.seerbit.com"},{t:"Public key and secret key retrieved",n:"SBPUBK_... and SBSECK_..."},{t:"Webhook secret key noted"},{t:"KYC documents submitted"},{t:"Bank account linked for settlements"},{t:"Sub-accounts created if using split payments"}]},
-  {id:"env",title:"Environment configuration",items:[{t:"Sandbox tested end-to-end before going live"},{t:"Live public key configured in production"},{t:"Base URL set correctly",n:"https://seerbitapi.com/api/v2"},{t:"API keys stored securely — not hardcoded"},{t:"HTTPS enforced on webhook endpoints"}]},
+  {id:"env",title:"Environment configuration",items:[{t:"Sandbox tested end-to-end before going live"},{t:"Live public key configured in production"},{t:"Base URL set correctly",n:"https://seerbitapi.com/api/v2"},{t:"API keys stored securely"},{t:"HTTPS enforced on webhook endpoints"}]},
   {id:"checkout",title:"Checkout integration",items:[{t:"Checkout SDK or API integrated"},{t:"Payment reference unique per transaction"},{t:"Amount, currency (NGN) and country (NG) correct"},{t:"Customer email and full name in payload"},{t:"Callback URL set and reachable"},{t:"Payment channels configured",n:"Card, transfer, USSD"},{t:"amountControl set correctly",n:"FIXEDAMOUNT or DYNAMICAMOUNT"}]},
   {id:"transfer",title:"Virtual account / transfer",items:[{t:"Virtual account creation flow tested"},{t:"Retry reference handling implemented"},{t:"Pending status handled correctly"},{t:"Bank webhook notification endpoint implemented"},{t:"Duplicate transfer detection in place"},{t:"Response code S20 handled",n:"Account opened successfully"}]},
   {id:"webhook",title:"Webhook handling",items:[{t:"Webhook URL registered in dashboard"},{t:"HMAC signature validation implemented"},{t:"HTTP 200 returned immediately"},{t:"Idempotency check implemented"},{t:"TRANSACTION eventType handled"},{t:"Webhook retry handled gracefully"},{t:"Alert set up for failed deliveries"}]},
@@ -259,23 +290,84 @@ const SECS=[
 const TOTAL=SECS.reduce((a,s)=>a+s.items.length,0);
 const BGS=['#E1F5EE','#E6F1FB','#FAEEDA','#FAECE7','#EEEDFE','#EAF3DE','#FBEAF0','#F1EFE8'];
 const TCS=['#085041','#0C447C','#633806','#712B13','#3C3489','#27500A','#72243E','#444441'];
-let merchants=[],viewers=[],currentId=null,filt='all',editId=null,chartI=null;
+const DEFAULT_PW='seerbit2024';
+const PW_KEY='sb_admin_pw';
+const MERCHANTS_KEY='sb_merchants_shared';
+const VIEWERS_KEY='sb_viewers_shared';
 
-async function load(){
-  try{const r=await window.storage.get('sb3_merchants');if(r)merchants=JSON.parse(r.value);}catch(e){merchants=[];}
-  try{const r=await window.storage.get('sb3_viewers');if(r)viewers=JSON.parse(r.value);}catch(e){viewers=[];}
+let merchants=[],viewers=[],currentId=null,filt='all',editId=null;
+let role=null,currentUser=null,adminPw=DEFAULT_PW;
+
+async function init(){
+  try{const r=await window.storage.get(PW_KEY,true);if(r)adminPw=r.value;}catch(e){}
+  try{const r=await window.storage.get(MERCHANTS_KEY,true);if(r)merchants=JSON.parse(r.value);}catch(e){merchants=[];}
+  try{const r=await window.storage.get(VIEWERS_KEY,true);if(r)viewers=JSON.parse(r.value);}catch(e){viewers=[];}
   SECS.forEach(s=>s._open=true);
-  renderAll();
+  showPg('pg-login');
 }
-async function saveMerchants(){try{await window.storage.set('sb3_merchants',JSON.stringify(merchants));}catch(e){}}
-async function saveViewersSt(){try{await window.storage.set('sb3_viewers',JSON.stringify(viewers));}catch(e){}}
+
+async function saveShared(){try{await window.storage.set(MERCHANTS_KEY,JSON.stringify(merchants),true);}catch(e){}}
+async function saveViewers(){try{await window.storage.set(VIEWERS_KEY,JSON.stringify(viewers),true);}catch(e){}}
+
+function switchLoginTab(t){
+  document.getElementById('admin-login-form').style.display=t==='admin'?'block':'none';
+  document.getElementById('viewer-login-form').style.display=t==='viewer'?'block':'none';
+  document.getElementById('tab-admin').style.background=t==='admin'?'#1a2e25':'#fff';
+  document.getElementById('tab-admin').style.color=t==='admin'?'#fff':'#5a7a6a';
+  document.getElementById('tab-viewer').style.background=t==='viewer'?'#1a2e25':'#fff';
+  document.getElementById('tab-viewer').style.color=t==='viewer'?'#fff':'#5a7a6a';
+}
+
+function doAdminLogin(){
+  const pw=document.getElementById('admin-pw').value;
+  if(pw===adminPw){
+    role='admin';currentUser='Admin';
+    document.getElementById('admin-pw').value='';
+    document.getElementById('admin-err').classList.remove('show');
+    enterDash();
+  } else {
+    document.getElementById('admin-err').classList.add('show');
+  }
+}
+
+function doViewerLogin(){
+  const name=document.getElementById('viewer-name').value.trim();
+  const email=document.getElementById('viewer-email').value.trim();
+  if(!name||!email){document.getElementById('viewer-err').classList.add('show');return;}
+  role='viewer';currentUser=name;
+  if(!viewers.find(v=>v.email===email)){
+    viewers.push({id:'V'+Date.now(),name,email,joined:new Date().toISOString()});
+    saveViewers();
+  }
+  document.getElementById('viewer-err').classList.remove('show');
+  enterDash();
+}
+
+function doLogout(){role=null;currentUser=null;showPg('pg-login');}
+
+function enterDash(){
+  const isAdmin=role==='admin';
+  document.getElementById('role-badge').textContent=isAdmin?'Admin':'Viewer';
+  document.getElementById('role-badge').className='role-badge '+(isAdmin?'rb-admin':'rb-viewer');
+  document.getElementById('role-badge2').textContent=isAdmin?'Admin':'Viewer';
+  document.getElementById('role-badge2').className='role-badge '+(isAdmin?'rb-admin':'rb-viewer');
+  document.getElementById('nav-username').textContent=currentUser;
+  document.getElementById('btn-add').style.display=isAdmin?'':'none';
+  document.getElementById('btn-settings').style.display=isAdmin?'':'none';
+  document.getElementById('readonly-notice').style.display=isAdmin?'none':'block';
+  document.getElementById('readonly-notice2').style.display=isAdmin?'none':'block';
+  document.getElementById('btn-edit').style.display=isAdmin?'':'none';
+  document.getElementById('btn-del').style.display=isAdmin?'':'none';
+  renderAll();
+  showPg('pg-dash');
+}
 
 function prog(m){const d=Object.values(m.checks||{}).filter(Boolean).length;return{done:d,total:TOTAL,pct:Math.round(d/TOTAL*100)};}
 function status(m){const{done,pct}=prog(m);return done===0?'new':pct===100?'done':'progress';}
 function ini(n){return(n||'').split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?';}
 function avStyle(n){const i=(n.charCodeAt(0)||0)%BGS.length;return`background:${BGS[i]};color:${TCS[i]}`;}
 
-function renderAll(){renderMetrics();renderList();renderChart();}
+function renderAll(){renderMetrics();renderList();renderTypeChart();}
 
 function renderMetrics(){
   const t=merchants.length,done=merchants.filter(m=>status(m)==='done').length,inp=merchants.filter(m=>status(m)==='progress').length;
@@ -284,7 +376,7 @@ function renderMetrics(){
     <div class="mc"><div class="mv">${t}</div><div class="ml">Total merchants</div></div>
     <div class="mc"><div class="mv">${inp}</div><div class="ml">In progress</div></div>
     <div class="mc"><div class="mv">${done}</div><div class="ml">Completed</div></div>
-    <div class="mc"><div class="mv">${avg}%</div><div class="ml">Average progress</div></div>`;
+    <div class="mc"><div class="mv">${avg}%</div><div class="ml">Avg progress</div></div>`;
 }
 
 function setF(v,el){filt=v;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('act'));el.classList.add('act');renderList();}
@@ -292,13 +384,12 @@ function setF(v,el){filt=v;document.querySelectorAll('.tab').forEach(t=>t.classL
 function renderList(){
   const q=(document.getElementById('srch').value||'').toLowerCase();
   const list=merchants.filter(m=>{
-    const mq=!q||m.name.toLowerCase().includes(q)||(m.email||'').toLowerCase().includes(q)||(m.engineer||'').toLowerCase().includes(q);
-    const ms=status(m),mf=filt==='all'||filt===ms;
-    return mq&&mf;
+    const mq=!q||m.name.toLowerCase().includes(q)||(m.email||'').toLowerCase().includes(q);
+    return(filt==='all'||filt===status(m))&&mq;
   });
   const el=document.getElementById('mlist');
-  if(!merchants.length){el.innerHTML='<div class="empty">No merchants yet. Click "+ Add merchant" to begin.</div>';return;}
-  if(!list.length){el.innerHTML='<div class="empty">No results. Try a different search or filter.</div>';return;}
+  if(!merchants.length){el.innerHTML='<div class="empty">'+(role==='admin'?'No merchants yet. Click "+ Add merchant" to begin.':'No merchants have been added yet.')+'</div>';return;}
+  if(!list.length){el.innerHTML='<div class="empty">No results found.</div>';return;}
   el.innerHTML=list.map(m=>{
     const{pct}=prog(m),s=status(m);
     const pill=s==='done'?'sp-done':s==='progress'?'sp-prog':'sp-new';
@@ -307,7 +398,7 @@ function renderList(){
       <div class="av" style="${avStyle(m.name)};width:34px;height:34px;font-size:12px;">${ini(m.name)}</div>
       <div style="flex:1;min-width:0;">
         <div class="mn">${m.name}</div>
-        <div class="ms">${m.type||''}${m.email?' · '+m.email:''}${m.engineer?' · '+m.engineer:''}</div>
+        <div class="ms">${[m.type,m.environment,m.engineer?'Eng: '+m.engineer:''].filter(Boolean).join(' · ')}</div>
         <div class="pbar"><div class="pf" style="width:${pct}%"></div></div>
       </div>
       <span class="spill ${pill}">${ptxt} ${pct}%</span>
@@ -315,13 +406,20 @@ function renderList(){
   }).join('');
 }
 
-function renderChart(){
-  const ctx=document.getElementById('wchart');if(!ctx)return;
-  if(chartI){chartI.destroy();}
-  const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  const seed=merchants.length;
-  const data=days.map((_,i)=>Math.max(0,[4,7,5,9,11,3,2][i]+seed%3));
-  chartI=new Chart(ctx,{type:'bar',data:{labels:days,datasets:[{label:'Check-ins',data,backgroundColor:'#1D9E75',borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#5a7a6a',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#5a7a6a',font:{size:11},stepSize:2}}}}});
+function renderTypeChart(){
+  const el=document.getElementById('type-chart');
+  if(!merchants.length){el.innerHTML='<div class="empty">No data yet.</div>';return;}
+  const counts={};
+  merchants.forEach(m=>{const t=m.type||'Other';counts[t]=(counts[t]||0)+1;});
+  const sorted=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  const max=sorted[0][1];
+  el.innerHTML=sorted.map(([t,c])=>{
+    const pct=Math.round(c/merchants.length*100);
+    return`<div style="margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:#0d1f17;margin-bottom:3px;"><span>${t}</span><span style="color:#5a7a6a;">${c} · ${pct}%</span></div>
+      <div style="height:5px;background:#e8f5ef;border-radius:99px;overflow:hidden;"><div style="height:100%;background:#1D9E75;border-radius:99px;width:${Math.round(c/max*100)}%;"></div></div>
+    </div>`;
+  }).join('');
 }
 
 function openDetail(id){
@@ -330,9 +428,10 @@ function openDetail(id){
   av.style.cssText=avStyle(m.name)+';width:44px;height:44px;font-size:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;';
   av.textContent=ini(m.name);
   document.getElementById('dname').textContent=m.name;
-  const meta=[m.type,m.environment,m.email,m.phone,m.priority!=='Normal'?m.priority+' priority':'',m.engineer?'Assigned: '+m.engineer:''].filter(Boolean).join(' · ');
-  document.getElementById('dmeta').textContent=meta;
-  document.getElementById('dnotes').value=m.notes||'';
+  document.getElementById('dmeta').textContent=[m.type,m.environment,m.email,m.phone,m.priority!=='Normal'?m.priority+' priority':'',m.engineer?'Assigned: '+m.engineer:''].filter(Boolean).join(' · ');
+  const nt=document.getElementById('dnotes');
+  nt.value=m.notes||'';
+  nt.disabled=role!=='admin';
   renderCL();showPg('pg-detail');
 }
 
@@ -341,7 +440,7 @@ function renderCL(){
   const{done,pct}=prog(m);
   document.getElementById('dbar').style.width=pct+'%';
   document.getElementById('dpct').textContent=done+' of '+TOTAL+' items complete ('+pct+'%)';
-  const checks=m.checks||{};
+  const checks=m.checks||{},isAdmin=role==='admin';
   document.getElementById('clbody').innerHTML=SECS.map(s=>{
     const sdone=s.items.filter((_,i)=>checks[s.id+'_'+i]).length;
     const isOp=s._open!==false;
@@ -352,8 +451,9 @@ function renderCL(){
         <span class="sbadge">${sdone}/${s.items.length}</span>
       </div>
       <div class="iw ${isOp?'op':''}" id="sw-${s.id}" style="padding:4px 0;">
-        ${s.items.map((item,i)=>{const key=s.id+'_'+i,chkd=!!checks[key];
-          return`<div class="irow ${chkd?'ck':''}" onclick="toggleItem('${s.id}',${i})">
+        ${s.items.map((item,i)=>{
+          const key=s.id+'_'+i,chkd=!!checks[key];
+          return`<div class="irow ${isAdmin?'clickable':''} ${chkd?'ck':''}" ${isAdmin?`onclick="toggleItem('${s.id}',${i})"`:''}>
             <div class="cbox"><svg class="cksvg" width="8" height="6" viewBox="0 0 8 6"><path d="M1 3l2 2 4-4" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
             <div><div class="itxt">${item.t}</div>${item.n?`<div class="inote">${item.n}</div>`:''}</div>
           </div>`;
@@ -364,18 +464,25 @@ function renderCL(){
 }
 
 function toggleSec(id){const s=SECS.find(x=>x.id===id);s._open=s._open===false;renderCL();}
+
 function toggleItem(sid,idx){
+  if(role!=='admin')return;
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
   if(!m.checks)m.checks={};
-  const k=sid+'_'+idx;m.checks[k]=!m.checks[k];
-  saveMerchants();renderCL();
+  m.checks[sid+'_'+idx]=!m.checks[sid+'_'+idx];
+  saveShared();renderCL();
 }
-function saveNotes(){const m=merchants.find(x=>x.id===currentId);if(!m)return;m.notes=document.getElementById('dnotes').value;saveMerchants();}
+
+function saveNotes(){
+  if(role!=='admin')return;
+  const m=merchants.find(x=>x.id===currentId);if(!m)return;
+  m.notes=document.getElementById('dnotes').value;
+  saveShared();
+}
 
 function openAdd(){
   editId=null;
   document.getElementById('mtitle').textContent='Add merchant';
-  document.getElementById('msub').textContent="Fill in details to start tracking this merchant's integration.";
   document.getElementById('msavebtn').textContent='Add merchant';
   ['mn','me','mph','meng'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('mt').value='Checkout integration';
@@ -388,7 +495,6 @@ function openEdit(){
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
   editId=currentId;
   document.getElementById('mtitle').textContent='Edit merchant';
-  document.getElementById('msub').textContent='Update merchant details.';
   document.getElementById('msavebtn').textContent='Save changes';
   document.getElementById('mn').value=m.name||'';
   document.getElementById('me').value=m.email||'';
@@ -403,69 +509,75 @@ function openEdit(){
 function closeModal(){document.getElementById('modal-wrap').classList.remove('op');editId=null;}
 
 function saveMerchant(){
+  if(role!=='admin')return;
   const name=document.getElementById('mn').value.trim();
   if(!name){document.getElementById('mn').focus();return;}
   const d={name,email:document.getElementById('me').value.trim(),phone:document.getElementById('mph').value.trim(),type:document.getElementById('mt').value,environment:document.getElementById('menv').value,priority:document.getElementById('mpri').value,engineer:document.getElementById('meng').value.trim()};
   if(editId){
-    const m=merchants.find(x=>x.id===editId);
-    if(m)Object.assign(m,d);
-    closeModal();
-    if(currentId===editId)openDetail(editId);
+    const m=merchants.find(x=>x.id===editId);if(m)Object.assign(m,d);
+    closeModal();if(currentId===editId)openDetail(editId);
   }else{
     merchants.push({id:'M'+Date.now(),added:new Date().toISOString(),checks:{},notes:'',...d});
     closeModal();
   }
-  saveMerchants();renderAll();
+  saveShared();renderAll();
 }
 
 function delMerchant(){
+  if(role!=='admin')return;
   const m=merchants.find(x=>x.id===currentId);if(!m)return;
   if(!confirm('Delete '+m.name+'? This cannot be undone.'))return;
   merchants=merchants.filter(x=>x.id!==currentId);
-  saveMerchants();showPg('pg-dash');renderAll();
+  saveShared();showPg('pg-dash');renderAll();
 }
 
-function regViewer(){
-  const name=document.getElementById('su-n').value.trim(),email=document.getElementById('su-e').value.trim(),role=document.getElementById('su-r').value;
-  if(!name||!email){alert('Name and email are required.');return;}
-  if(viewers.find(v=>v.email===email)){alert('This email is already registered.');return;}
-  viewers.push({id:'V'+Date.now(),name,email,role,joined:new Date().toISOString()});
-  saveViewersSt();renderViewers();
-  document.getElementById('su-n').value='';document.getElementById('su-e').value='';
+function changePassword(){
+  const cur=document.getElementById('pw-cur').value;
+  const nw=document.getElementById('pw-new').value;
+  const conf=document.getElementById('pw-confirm').value;
+  const err=document.getElementById('pw-err');
+  const ok=document.getElementById('pw-ok');
+  err.classList.remove('show');ok.style.display='none';
+  if(cur!==adminPw){err.textContent='Current password is incorrect.';err.classList.add('show');return;}
+  if(nw.length<6){err.textContent='New password must be at least 6 characters.';err.classList.add('show');return;}
+  if(nw!==conf){err.textContent='Passwords do not match.';err.classList.add('show');return;}
+  adminPw=nw;
+  window.storage.set(PW_KEY,adminPw,true);
+  document.getElementById('pw-cur').value='';
+  document.getElementById('pw-new').value='';
+  document.getElementById('pw-confirm').value='';
+  ok.style.display='block';
 }
 
 function renderViewers(){
   const el=document.getElementById('vlist');if(!el)return;
-  if(!viewers.length){el.innerHTML='<div style="font-size:12px;color:#5a7a6a;text-align:center;padding:.75rem 0;">No viewers registered yet.</div>';return;}
+  if(!viewers.length){el.innerHTML='<div style="font-size:12px;color:#5a7a6a;text-align:center;padding:.75rem 0;">No viewers have signed in yet.</div>';return;}
   el.innerHTML=viewers.map(v=>`<div class="viewer-row">
     <div class="av" style="${avStyle(v.name)};width:28px;height:28px;font-size:10px;">${ini(v.name)}</div>
-    <div style="flex:1;"><div style="font-size:12px;color:#0d1f17;">${v.name}</div><div style="font-size:11px;color:#5a7a6a;">${v.email} · ${v.role}</div></div>
+    <div style="flex:1;"><div style="font-size:12px;color:#0d1f17;">${v.name}</div><div style="font-size:11px;color:#5a7a6a;">${v.email} · ${new Date(v.joined).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</div></div>
     <button onclick="removeViewer('${v.id}')" style="font-size:11px;color:#A32D2D;background:none;border:none;cursor:pointer;font-family:var(--font-sans);">Remove</button>
   </div>`).join('');
 }
 
-function removeViewer(id){viewers=viewers.filter(v=>v.id!==id);saveViewersSt();renderViewers();}
+function removeViewer(id){viewers=viewers.filter(v=>v.id!==id);saveViewers();renderViewers();}
+
+function showPg(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
+  document.getElementById(id).classList.add('act');
+  if(id==='pg-settings')renderViewers();
+}
 
 function expCSV(){
   const rows=[['Name','Email','Phone','Type','Environment','Priority','Engineer','Progress %','Done','Total','Status','Added']];
   merchants.forEach(m=>{const{done,pct}=prog(m);rows.push([m.name,m.email||'',m.phone||'',m.type||'',m.environment||'',m.priority||'Normal',m.engineer||'',pct,done,TOTAL,status(m),m.added?m.added.slice(0,10):'']);});
   const csv=rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
-  dl('data:text/csv;charset=utf-8,'+encodeURIComponent(csv),'seerbit_merchants_'+now()+'.csv');
+  dl('data:text/csv;charset=utf-8,'+encodeURIComponent(csv),'seerbit_merchants_'+new Date().toISOString().slice(0,10)+'.csv');
 }
 function expJSON(){
-  const data=merchants.map(m=>({...m,progress:prog(m),status:status(m)}));
-  dl('data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(data,null,2)),'seerbit_merchants_'+now()+'.json');
+  dl('data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(merchants.map(m=>({...m,progress:prog(m),status:status(m)})),null,2)),'seerbit_merchants_'+new Date().toISOString().slice(0,10)+'.json');
 }
 function dl(href,name){const a=document.createElement('a');a.href=href;a.download=name;a.click();}
-function now(){return new Date().toISOString().slice(0,10);}
-function copyLink(){const t='Seerbit Merchant Integration Tracker';navigator.clipboard?navigator.clipboard.writeText(t).then(()=>alert('Copied!')):alert(t);}
-
-function showPg(id){
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
-  document.getElementById(id).classList.add('act');
-  if(id==='pg-signup')renderViewers();
-}
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-load();
+init();
 </script>
